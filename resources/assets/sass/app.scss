@@ -1,0 +1,197 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+.form-group {
+  width: 250px;
+}
+
+rect.highcharts-background {
+  fill: $body-bg;
+}
+
+.highcharts-color-0 {
+  fill: #008F00;
+  color: #008F00;
+}
+
+.highcharts-point {
+  fill: #008F00;
+}
+
+.highcharts-negative {
+  fill: #CF0000;
+  color: #CF0000;
+}
+
+
+header {
+  position: fixed;
+  background-color: darkred;
+  width: 100%;
+}
+
+h1.golden-title {
+  color: goldenrod;
+}
+
+.sideBar {
+  /**
+   * This container orders items according to flexbox
+   * rules. By default, this would arrange its children
+   * horizontally. However, the next property...
+   */
+  display: flex;
+
+  /**
+   * ...sets the main axis to be vertical instead of
+   * horizontal, so now the children are laid out
+   * vertically, from top to bottom.
+   */
+  flex-direction: column;
+
+  /**
+   * It will also put as much space as possible
+   * between its children, with the children at either end
+   * laying flush against the container's edges.
+   */
+  justify-content: space-between;
+
+  height: 100%;
+  width: 280px;
+  border-right: 1px solid #D7DBDD;
+  background-color: #FCFDFD;
+  padding: 10px;
+}
+
+.sideBar__item {
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #16A2D7;
+  font-size: 14px;
+  width: 100%;
+}
+
+.sideBar__item.is-side-bar-item-selected {
+  background-color: $body-bg;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.centeredPrompt {
+  /**
+   * Lay out the children of this container with
+   * flexbox.
+   */
+  display: flex;
+
+  /**
+   * Rotate the main axis so that the children
+   * are laid out vertically, the same as in the
+   * above "Side bar" example.
+   */
+  flex-direction: column;
+
+  /**
+   * Instead of pushing the children apart, as in
+   * previous examples, we will group them together
+   * in the center of their container.
+   */
+  justify-content: center;
+
+  /**
+   * Align the children in the center, along
+   * the main axis. Because the direction is
+   * "column" this has a similar effect as setting
+   * text-align: center.
+   */
+  align-items: center;
+
+  min-height: 300px;
+  padding: 10px;
+}
+
+.centeredPrompt__item + .centeredPrompt__item {
+  margin-top: 5px;
+}
+
+.centeredPromptIcon {
+  font-size: 60px;
+  line-height: 0;
+}
+
+.centeredPromptLabel {
+  color: #86969C;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.centeredPromptDetails {
+  color: #86969C;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.icon {
+  color: #BCD2DA;
+}
+
+.mosaic {
+  /**
+   * Lay out the children of this container with
+   * flexbox, which is horizontal by default.
+   */
+  display: flex;
+
+  /**
+   * Set the main axis to be vertical instead of
+   * horizontal, so now the children are laid out
+   * vertically, from top to bottom.
+   */
+  flex-direction: vertical;
+
+  /**
+   * Now when the children wrap, they'll wrap to the
+   * next "column".
+   */
+  flex-wrap: wrap;
+  background-color: $body-bg;
+
+  width: 240px;
+  height: 500px;
+  padding: 15px;
+  border: 1px solid #D7DBDD;
+  overflow: auto;
+}
+
+.tabs {
+  /**
+   * Setting display to flex makes this container lay
+   * out its children using flexbox, the exact same
+   * as in the above "Stepper input" example.
+   */
+  display: vertical;
+
+  border-bottom: 1px solid #D7DBDD;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 5px 30px;
+  color: #16A2D7;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.is-tab-selected {
+  border-bottom-color: #4EBBE4;
+}
