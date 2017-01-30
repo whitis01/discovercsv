@@ -21,3 +21,7 @@ Route::group([ 'prefix' => 'records' ] , function() {
 
     Route::post('/', RecordsController::class . '@store');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
