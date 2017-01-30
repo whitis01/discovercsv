@@ -15,8 +15,8 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('trans_date');
-            $table->timestamp('post_date');
+            $table->timestamp('trans_date')->nullable();
+            $table->timestamp('post_date')->nullable();
             $table->string('description');
             $table->float('amount');
             $table->string('category');
