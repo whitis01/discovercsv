@@ -27,6 +27,8 @@ class RecordTableSeeder extends Seeder
         foreach ($records as $record) {
             try {
                 $rec = explode(',', $record);
+                $rec[0] = new Datetime($rec[0]);
+                $rec[1] = new Datetime($rec[1]);
                 $rec = array_combine(self::RECORD_KEYS, $rec);
             } catch (Exception $e) {
                 $rec[2] = $rec[2].$rec[3];
@@ -34,10 +36,7 @@ class RecordTableSeeder extends Seeder
                 $rec = array_combine(self::RECORD_KEYS, $rec);
             }
 
-            $insertRecord = [];
-            foreach ($rec as $key => $item) $insertRecord[$key] = trim($item, " \"");
-
-            $rec = new Record($insertRecord);
+            $rec = new Record($rec);
             $rec->save();
         }
     }

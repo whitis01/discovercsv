@@ -3,7 +3,6 @@
 namespace App;
 
 use App\Jobs\DatabaseChart;
-use ConsoleTVs\Charts\Facades\Charts;
 use ConsoleTVs\Charts\Builder\Database;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,8 +24,8 @@ class Record extends Model
         $date = 'post_date';
         $data = Record::all('amount', $date);
 
-        $year = trim(strrchr($data->first()->$date, '/'), '/');
-        $yearLast = trim(strrchr($data->last()->$date, '/'), '/');
+        $year = date('Y', strtotime($data->first()->$date));
+        $yearLast = date('Y', strtotime($data->last()->$date));
 
         $data = $debit ? $data->filter(function($items) { return $items->amount > 0; }) :
                          $data->filter(function($items) { return $items->amount <= 0; });
