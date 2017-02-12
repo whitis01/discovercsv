@@ -9,16 +9,11 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class DatabaseChart extends Database implements ShouldQueue
+class DatabaseChart extends Database
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
-    public $data = [];
-    public $date_column = 'created_at';
-
     /**
      * DatabaseChart constructor.
-     * @param string $data
+     * @param \Illuminate\Database\Eloquent\Collection|static[] $data
      * @param null $type
      * @param null $library
      */
@@ -80,16 +75,5 @@ class DatabaseChart extends Database implements ShouldQueue
         $this->values = $values;
 
         return $this;
-    }
-
-
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
-    public function handle()
-    {
-        //
     }
 }
