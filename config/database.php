@@ -1,6 +1,6 @@
 <?php
 
-if (!defined('RDS_HOSTNAME')) {
+if (!defined($_SERVER('RDS_HOSTNAME'))) {
     define('RDS_HOSTNAME', $_SERVER('RDS_HOSTNAME'));
     define('RDS_PORT', $_SERVER('RDS_PORT'));
     define('RDS_DB_NAME', $_SERVER('RDS_DB_NAME'));
