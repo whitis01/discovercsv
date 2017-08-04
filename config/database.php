@@ -8,6 +8,8 @@ if (!defined($_SERVER('RDS_HOSTNAME'))) {
     define('RDS_PASSWORD', $_SERVER('RDS_PASSWORD'));
 }
 
+echo $_SERVER('RDS_PASSWORD');
+
 return [
 
     /*
@@ -49,11 +51,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', RDS_HOSTNAME),
-            'port' => env('DB_PORT', RDS_PORT),
-            'database' => env('DB_DATABASE', RDS_DB_NAME),
-            'username' => env('DB_USERNAME', RDS_USERNAME),
-            'password' => env('DB_PASSWORD', RDS_PASSWORD),
+            'host' => env('DB_HOST', $_SERVER('RDS_HOSTNAME')),
+            'port' => env('DB_PORT', $_SERVER('RDS_PORT')),
+            'database' => env('DB_DATABASE', $_SERVER('RDS_DB_NAME')),
+            'username' => env('DB_USERNAME', $_SERVER('RDS_USERNAME')),
+            'password' => env('DB_PASSWORD', $_SERVER('RDS_PASSWORD')),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
