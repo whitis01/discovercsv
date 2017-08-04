@@ -1,14 +1,12 @@
 <?php
 
-if (!defined($_SERVER('RDS_HOSTNAME'))) {
-    define('RDS_HOSTNAME', $_SERVER('RDS_HOSTNAME'));
-    define('RDS_PORT', $_SERVER('RDS_PORT'));
-    define('RDS_DB_NAME', $_SERVER('RDS_DB_NAME'));
-    define('RDS_USERNAME', $_SERVER('RDS_USERNAME'));
-    define('RDS_PASSWORD', $_SERVER('RDS_PASSWORD'));
+if (!defined($_SERVER['RDS_HOSTNAME'])) {
+    define('RDS_HOSTNAME', $_SERVER['RDS_HOSTNAME']);
+    define('RDS_PORT', $_SERVER['RDS_PORT']);
+    define('RDS_DB_NAME', $_SERVER['RDS_DB_NAME']);
+    define('RDS_USERNAME', $_SERVER['RDS_USERNAME']);
+    define('RDS_PASSWORD', $_SERVER['RDS_PASSWORD']);
 }
-
-echo $_SERVER('RDS_PASSWORD');
 
 return [
 
@@ -51,11 +49,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', $_SERVER('RDS_HOSTNAME')),
-            'port' => env('DB_PORT', $_SERVER('RDS_PORT')),
-            'database' => env('DB_DATABASE', $_SERVER('RDS_DB_NAME')),
-            'username' => env('DB_USERNAME', $_SERVER('RDS_USERNAME')),
-            'password' => env('DB_PASSWORD', $_SERVER('RDS_PASSWORD')),
+            'host' => env('DB_HOST', 'aa1qmp1nt1f47jy.cvg3bqp2x9xh.us-west-2.rds.amazonaws.com'),
+            'port' => env('DB_PORT', 3306),
+            'database' => env('DB_DATABASE', 'ebdb'),
+            'username' => env('DB_USERNAME', 'ebroot'),
+            'password' => env('DB_PASSWORD', 'iWhite5$'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
