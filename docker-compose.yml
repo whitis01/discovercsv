@@ -1,0 +1,14 @@
+discovercsv:
+  container_name: discovercsv
+  build: .
+  environment:
+   - APP_ENV=localhost
+   - APP_URL=http://discovercsv.kingviking.com
+   - RDS_HOSTNAME=aa1qmp1nt1f47jy.cvg3bqp2x9xh.us-west-2.rds.amazonaws.com
+   - RDS_DATABASE=ebdb
+   - RDS_USERNAME=ebroot
+   - RDS_PASSWORD=iWhite5$$
+   - RDS_PORT=3306
+  volumes:
+   - .:/var/www/html
+
