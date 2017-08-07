@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'aa1qmp1nt1f47jy.cvg3bqp2x9xh.us-west-2.rds.amazonaws.com'),
-            'port' => env('DB_PORT', 3306),
-            'database' => env('DB_DATABASE', 'ebdb'),
-            'username' => env('DB_USERNAME', 'ebroot'),
-            'password' => env('DB_PASSWORD', 'iWhite5$'),
+            'host' => env(RDS_HOSTNAME),
+            'port' => env('RDS_PORT'),
+            'database' => env('RDS_DATABASE'),
+            'username' => env('RDS_USERNAME'),
+            'password' => env('RDS_PASSWORD'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
