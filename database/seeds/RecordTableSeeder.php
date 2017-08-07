@@ -17,7 +17,7 @@ class RecordTableSeeder extends Seeder
     public function run()
     {
         $content = File::get(base_path().'/public/storage/discover.csv');
-        $records = explode("\r\n", $content);
+        $records = explode("\n", $content);
 
         array_pop($records);
         array_forget($records, 0);
